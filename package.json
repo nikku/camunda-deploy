@@ -1,7 +1,7 @@
 {
   "name": "camunda-deploy",
   "version": "1.0.0",
-  "description": "Deploy to Camunda from NodeJS",
+  "description": "Deploy to Camunda from the command-line",
   "main": "index.js",
   "bin": {
     "camunda-deploy": "bin/cli.js"
