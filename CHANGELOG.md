@@ -6,6 +6,10 @@ All notable changes to [camunda-deploy](https://github.com/nikku/camunda-deploy)
 
 ___Note:__ Yet to be released changes appear here._
 
+## 1.0.1
+
+* `DOCS`: improve package description
+
 ## 1.0.0
 
 * `DOCS`: document usage and installation
