@@ -1,6 +1,6 @@
 {
   "name": "camunda-deployer",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Deploy to Camunda from NodeJS",
   "main": "index.js",
   "bin": {
