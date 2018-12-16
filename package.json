@@ -1,0 +1,42 @@
+{
+  "name": "camunda-deployer",
+  "version": "0.0.0",
+  "description": "Deploy to Camunda from NodeJS",
+  "main": "index.js",
+  "bin": {
+    "camunda-deploy": "bin/cli.js"
+  },
+  "scripts": {
+    "pretest": "camunda start",
+    "test": "node test.js",
+    "posttest": "camunda stop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikku/camunda-deployer.git"
+  },
+  "keywords": [
+    "camunda",
+    "camundabpm",
+    "deployer",
+    "deploy"
+  ],
+  "author": {
+    "name": "Nico Rehwaldt",
+    "url": "https://github.com/nikku"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "execa": "^1.0.0",
+    "run-camunda": "^2.0.0"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "dotenv": "^6.2.0",
+    "form-data": "^2.3.3",
+    "glob": "^7.1.3",
+    "is-glob": "^4.0.0",
+    "mri": "^1.1.1",
+    "node-fetch": "^2.3.0"
+  }
+}
