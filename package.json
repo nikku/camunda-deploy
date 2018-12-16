@@ -1,5 +1,5 @@
 {
-  "name": "camunda-deployer",
+  "name": "camunda-deploy",
   "version": "0.1.0",
   "description": "Deploy to Camunda from NodeJS",
   "main": "index.js",
