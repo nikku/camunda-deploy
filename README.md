@@ -5,6 +5,21 @@
 Deploy to [Camunda](https://camunda.com/products/bpmn-engine/) via command-line.
 
 
+## Installation
+
+Install the command-line utility globally via:
+
+```sh
+npm install camunda-deploy -g
+```
+
+Alternatively, use it directly via `npx`:
+
+```sh
+npx camunda-deploy -n my-deployment *.bpmn
+```
+
+
 ## Usage
 
 ```sh
