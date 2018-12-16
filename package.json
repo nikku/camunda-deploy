@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nikku/camunda-deployer.git"
+    "url": "git+https://github.com/nikku/camunda-deploy.git"
   },
   "keywords": [
     "camunda",
