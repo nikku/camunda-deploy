@@ -37,8 +37,6 @@ Options
   --quite                 Log no output
   --json                  Output deployed resources as JSON
 
-  --save                  Save configuration to local .camunda-deploy file
-
 Endpoint Configuration
 
   The CLI will read the Camunda endpoint as well as authentication

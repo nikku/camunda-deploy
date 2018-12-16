@@ -25,7 +25,6 @@ require('dotenv').config();
       n: 'name'
     },
     boolean: [
-      'save',
       'verbose',
       'quite',
       'json',
@@ -263,8 +262,6 @@ ${bold('Options')}
   --verbose               Log verbose output
   --quite                 Log no output
   --json                  Output deployed resources as JSON
-
-  --save                  Save configuration to local .camunda-deploy file
 
 ${bold('Endpoint Configuration')}
 
