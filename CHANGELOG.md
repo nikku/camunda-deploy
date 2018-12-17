@@ -6,6 +6,10 @@ All notable changes to [camunda-deploy](https://github.com/nikku/camunda-deploy)
 
 ___Note:__ Yet to be released changes appear here._
 
+## 1.2.2
+
+* `DOCS`: correct example output
+
 ## 1.2.1
 
 _Republish of `v1.2.0` with fixed version numbers._
