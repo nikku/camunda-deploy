@@ -52,6 +52,7 @@ Endpoint Configuration
 Examples
 
   $ camunda-deploy -n invoice -s node-worker-1 *.bpmn
+  
    ○ preparing deployment (5 resources)
    ○ deploying to Camunda
    ✔ 3 artifacts deployed (2 added, 1 updated)
