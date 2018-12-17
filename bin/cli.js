@@ -12,6 +12,12 @@ const chalk = require('chalk');
 
 const mri = require('mri');
 
+const SUCCESS = chalk.green('✔');
+const ERROR = chalk.red('✖');
+const PROGRESS = chalk.gray('○');
+const DONE = chalk.gray('●');
+const NONE = '';
+
 require('dotenv').config();
 
 
@@ -36,6 +42,10 @@ require('dotenv').config();
       'name'
     ]
   });
+
+  if (!args.json) {
+    console.log();
+  }
 
   if (args.help) {
     return printHelp();
@@ -84,14 +94,12 @@ async function run(args) {
     throw new Error('missing deployment name');
   }
 
-  log(`preparing deployment (${resources.length} resources)`, {
+  log(PROGRESS, `preparing deployment (${resources.length} resources)`, {
     ...deploymentConfig,
     resources: resources.map(r => r.name)
   });
 
-  log('connecting to Camunda endpoint', endpointConfig)
-
-  log(`deploying to Camunda`);
+  log(PROGRESS, `deploying to Camunda`, endpointConfig);
 
   const deployment = await deploy(endpointConfig, {
     ...deploymentConfig,
@@ -133,9 +141,10 @@ async function run(args) {
   });
 
   if (!createdCount && !updatedCount) {
-    log(bold('no artifacts updated/added'));
+    log(DONE, bold('no artifacts updated/added'));
   } else {
     log(
+      SUCCESS,
       bold(`${createdCount + updatedCount} artifacts deployed (${createdCount} added, ${updatedCount} updated)`),
       deployedArtifacts
     );
@@ -215,28 +224,38 @@ function indent(str, chars) {
 }
 
 function createLog(verbose) {
-  return function log(msg, payload) {
-    console.log(` ○  ${msg}`);
+  return function log(type, msg, payload) {
+    console[
+      type === ERROR ? 'error' : 'log'
+    ](` ${type} ${msg}`);
 
     if (verbose && payload) {
       const serializedPayload = stringify(payload);
 
-      console.log(`${indent(serializedPayload, '    ')}`);
+      console[
+        type === ERROR ? 'error' : 'log'
+      ](`${indent(serializedPayload, '   ')}`);
     }
   }
 
 }
 
 function errorExit(args, error) {
+  console.error(` ${ERROR} ${error.message}`);
 
   if (args.verbose) {
     console.error(error);
-  } else {
-    console.error(`error: ${error.message}`);
   }
 
   if (args.json) {
     console.log('null');
+  } else {
+
+    if (!args.verbose) {
+      console.log(`
+Run with --verbose for additional debug output.`
+      );
+    }
   }
 
   process.exit(1);
@@ -279,10 +298,9 @@ ${bold('Examples')}
 
   $ camunda-deploy -n invoice -s node-worker-1 *.bpmn
 
-   ○  preparing deployment (5 resources)
-   ○  connecting to Camunda endpoint
-   ○  deploying to Camunda
-   ○  3 artifacts deployed (2 added, 1 updated)
+   ○ preparing deployment (5 resources)
+   ○ deploying to Camunda
+   ✔ 3 artifacts deployed (2 added, 1 updated)
 
   $ camunda-deploy -n invoice --json *.bpmn > result.json
     `.trim();
