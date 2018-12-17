@@ -1,6 +1,6 @@
 {
   "name": "camunda-deploy",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Deploy to Camunda from the command-line",
   "main": "index.js",
   "bin": {
