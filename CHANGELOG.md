@@ -6,12 +6,12 @@ All notable changes to [camunda-deploy](https://github.com/nikku/camunda-deploy)
 
 ___Note:__ Yet to be released changes appear here._
 
-## 1.1.0
+## 1.2.0
 
 * `FEAT`: simplify output
 * `FEAT`: add status indicators (success, neutral, failure)
 
-## 1.0.2
+## 1.1.0
 
 * `FIX`: remove unimplemented command-line switch
 
