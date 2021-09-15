@@ -1,6 +1,6 @@
 # camunda-deploy
 
-[![Build Status](https://travis-ci.com/nikku/camunda-deploy.svg?branch=master)](https://travis-ci.com/nikku/camunda-deploy)
+[![CI](https://github.com/nikku/camunda-deploy/actions/workflows/CI.yml/badge.svg)](https://github.com/nikku/camunda-deploy/actions/workflows/CI.yml)
 
 Deploy to [Camunda](https://camunda.com/products/bpmn-engine/) via command-line.
 
